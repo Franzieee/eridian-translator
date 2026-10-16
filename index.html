@@ -20,7 +20,13 @@
   <canvas id="astrophageCanvas" aria-hidden="true"></canvas>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Eridian Translator home">
-      <span class="brand-icon">🎵🎶</span>
+      <span class="brand-icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none">
+          <path d="M29 8v25a7 7 0 1 1-4-6.3V14l17-4v19
+                  a7 7 0 1 1-4-6.3V5L29 8Z"
+                fill="currentColor"/>
+        </svg>
+      </span>
       <span>Eridian Translator</span>
     </a>
 
@@ -31,7 +37,17 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        Buy me a Ko-fi ☕
+        Buy me a Ko-fi
+        <svg class="inline-icon" viewBox="0 0 24 24"
+            fill="none" aria-hidden="true">
+          <path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z"
+                stroke="currentColor" stroke-width="1.8"/>
+          <path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"
+                stroke="currentColor" stroke-width="1.8"/>
+          <path d="M8 6c-2-2 2-2 0-4M12 6c-2-2 2-2 0-4"
+                stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round"/>
+        </svg>
       </a>
     </nav>
   </header>
@@ -68,13 +84,16 @@
 
       <label for="inputText" class="field-label">Your text</label>
 
-      <textarea
-        id="inputText"
-        placeholder="Paste or type your text here..."
-        spellcheck="false"
-        rows="6"
-      ></textarea>
-
+      <div class="input-editor">
+        <div id="inputPreview" class="input-preview" aria-hidden="true"></div>
+          <textarea
+            id="inputText"
+            placeholder="Paste or type your text here..."
+            spellcheck="false"
+            rows="6"
+          ></textarea>
+      </div>
+      
       <p id="warningMessage" class="warning" role="status"></p>
 
       <div class="field-heading">
@@ -87,12 +106,20 @@
         </span>
       </div>
 
+      <div
+        id="outputPreview"
+        class="translation-preview"
+        role="region"
+        aria-label="Translated text"
+        aria-live="polite"
+      ></div>
+
       <textarea
         id="outputText"
-        placeholder="Your translation will appear here..."
-        rows="6"
+        class="output-raw"
+        tabindex="-1"
+        aria-hidden="true"
         readonly
-        aria-label="Translated text"
       ></textarea>
 
       <div class="action-buttons">

@@ -494,3 +494,162 @@ details p {
     scroll-behavior: auto;
   }
 }
+
+/* Crimson monochrome icons */
+.brand-icon {
+  display: inline-flex;
+  align-items: center;
+  color: #ff5260;
+}
+
+.brand-icon svg {
+  width: 1.5em;
+  height: 1.5em;
+  filter: drop-shadow(0 0 7px rgba(225, 58, 72, 0.45));
+}
+
+.inline-icon {
+  width: 1.1em;
+  height: 1.1em;
+  display: inline-block;
+  vertical-align: -0.2em;
+  color: #ff7b88;
+  margin-left: 4px;
+}
+
+/* Crimson Eridian translation preview */
+.translation-preview {
+  display: block;
+  width: 100%;
+  min-height: 150px;
+  padding: 15px;
+  color: var(--text);
+  background: rgba(3, 2, 4, 0.76);
+  border: 1px solid rgba(255, 125, 140, 0.25);
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  line-height: 2;
+  font: inherit;
+}
+
+/* Hide the original text storage without removing it */
+.output-raw {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* SVG music-note previews */
+.eridian-emoji {
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  margin: 0 0.04em;
+  vertical-align: -0.2em;
+  object-fit: contain;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.translation-preview:empty::before {
+  content: "Your translation will appear here...";
+  color: #9c858e;
+}
+
+.translation-preview:focus-visible {
+  outline: 3px solid rgba(255, 70, 90, 0.35);
+  outline-offset: 2px;
+}
+
+
+.input-editor {
+  position: relative;
+}
+
+
+/* Input editor and its visual preview */
+.input-editor {
+  position: relative;
+}
+
+.input-preview,
+.input-editor textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 150px;
+  margin: 0;
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font: inherit;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.input-preview {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  color: var(--text);
+  background: transparent;
+}
+
+.input-editor textarea {
+  position: relative;
+  z-index: 1;
+  display: block;
+  resize: vertical;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  caret-color: #ff596b;
+  background: rgba(3, 2, 4, 0.76);
+  border-color: rgba(255, 125, 140, 0.25);
+}
+
+.input-editor textarea::placeholder {
+  color: #9c858e;
+  -webkit-text-fill-color: #9c858e;
+}
+
+.input-editor textarea::selection {
+  background: rgba(255, 70, 90, 0.35);
+}
+
+/* SVG note previews */
+.eridian-emoji {
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  margin: 0 0.04em;
+  vertical-align: -0.2em;
+  object-fit: contain;
+  user-select: none;
+}
+
+.input-editor textarea {
+  position: relative;
+  display: block;
+  resize: vertical;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  caret-color: #ff596b;
+  background: transparent;
+  border-color: rgba(255, 125, 140, 0.25);
+  z-index: 1;
+}
+
+.input-editor textarea::placeholder {
+  color: #9c858e;
+  -webkit-text-fill-color: #9c858e;
+}
+
+.input-editor textarea::selection {
+  background: rgba(255, 70, 90, 0.35);
+}
