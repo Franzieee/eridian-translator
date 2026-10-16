@@ -1,0 +1,496 @@
+
+:root {
+  --background: #090204;
+  --surface: rgba(12, 8, 11, 0.84);
+  --text: #fff2f2;
+  --muted: #c0aeb5;
+  --accent: #e13a48;
+  --accent-hover: #ff5260;
+  --border: rgba(255, 100, 115, 0.24);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px clamp(16px, 5vw, 64px);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 750;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.main-content {
+  width: min(760px, calc(100% - 32px));
+  margin: 48px auto;
+}
+
+.translator-card {
+  padding: clamp(20px, 5vw, 40px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgb(55 33 85 / 6%);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 12px 0 28px;
+  color: var(--muted);
+}
+
+.direction-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 28px;
+  padding: 6px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.direction-btn {
+  padding: 12px 8px;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.direction-btn.active {
+  color: white;
+  background: var(--accent);
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 750;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 150px;
+  padding: 15px;
+  color: var(--text);
+  background: #fdfcff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  resize: vertical;
+  overflow-wrap: anywhere;
+}
+
+textarea:focus {
+  outline: 3px solid rgb(121 86 201 / 18%);
+  border-color: var(--accent);
+}
+
+textarea::placeholder {
+  color: #a29aaf;
+}
+
+.field-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-top: 22px;
+}
+
+.field-heading .field-label {
+  margin-bottom: 8px;
+}
+
+.status {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.warning {
+  margin: 8px 0 0;
+  color: var(--warning);
+  font-size: 0.85rem;
+}
+
+.warning:empty {
+  display: none;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.button {
+  padding: 11px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.button.primary {
+  color: white;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.button.primary:hover,
+.direction-btn.active:hover {
+  background: var(--accent-hover);
+}
+
+.button.secondary {
+  color: var(--text);
+  background: white;
+}
+
+.disclaimer {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.faq-section {
+  margin-top: 52px;
+}
+
+.faq-section h2 {
+  margin: 0 0 20px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  letter-spacing: -0.03em;
+}
+
+details {
+  padding: 17px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+details p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.site-footer {
+  padding: 28px 16px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.82rem;
+}
+
+.site-footer p {
+  margin: 5px 0;
+}
+
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header-links {
+    gap: 16px;
+  }
+
+  .main-content {
+    margin: 24px auto;
+  }
+
+  .direction-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons {
+    flex-direction: column-reverse;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+
+/* Dark space behind the canvas */
+body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background: #090204;
+  color: var(--text);
+}
+
+/* Canvas covers the screen but never blocks clicks */
+#astrophageCanvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Header: dark translucent glass */
+.site-header {
+  position: relative;
+  z-index: 1;
+  background: rgba(10, 4, 7, 0.78);
+  border-bottom: 1px solid rgba(255, 90, 105, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.brand,
+.brand:hover {
+  color: #fff1f2;
+}
+
+.header-links a {
+  color: #ffd4d8;
+}
+
+.header-links a:hover {
+  color: #ffffff;
+}
+
+/* Main translator: glossy, nearly black glass */
+.translator-card {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: rgba(8, 5, 8, 0.82);
+  border: 1px solid rgba(255, 105, 120, 0.28);
+  border-radius: var(--radius);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.48),
+    0 0 45px rgba(160, 0, 25, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Subtle red reflection at the top of the glass */
+.translator-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  width: 76%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 100, 120, 0.75),
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* Keep card contents above the reflection */
+.translator-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  color: #ff7b88;
+}
+
+h1,
+.faq-section h2 {
+  color: #fff3f4;
+}
+
+.subtitle,
+.disclaimer,
+.status {
+  color: #c6b1b8;
+}
+
+/* Direction selector */
+.direction-selector {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(255, 125, 140, 0.18);
+}
+
+.direction-btn {
+  color: #cbb9bf;
+}
+
+.direction-btn.active {
+  background: #b91f32;
+  color: white;
+}
+
+.direction-btn.active:hover {
+  background: #e13a48;
+}
+
+/* Text boxes stay clear against the red background */
+textarea {
+  color: #fff4f5;
+  background: rgba(3, 2, 4, 0.76);
+  border-color: rgba(255, 125, 140, 0.25);
+  caret-color: #ff596b;
+}
+
+textarea::placeholder {
+  color: #9c858e;
+}
+
+textarea:focus {
+  outline-color: rgba(255, 70, 90, 0.22);
+  border-color: #d94354;
+}
+
+/* Buttons */
+.button.primary {
+  background: #b91f32;
+  border-color: #b91f32;
+}
+
+.button.primary:hover {
+  background: #e13a48;
+  border-color: #e13a48;
+}
+
+.button.secondary {
+  color: #f8e8eb;
+  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(255, 125, 140, 0.22);
+}
+
+.warning {
+  color: #ffaaa5;
+}
+
+/* FAQ section */
+.faq-section {
+  position: relative;
+  z-index: 1;
+}
+
+details {
+  border-color: rgba(255, 125, 140, 0.18);
+}
+
+summary {
+  color: #ffe8eb;
+}
+
+details p {
+  color: #c6b1b8;
+}
+
+/* Footer */
+.site-footer {
+  position: relative;
+  z-index: 1;
+  color: #bda9b0;
+}
+
+/* Accessible fallback for people who prefer less transparency */
+@supports not (backdrop-filter: blur(20px)) {
+  .translator-card {
+    background: rgba(8, 5, 8, 0.96);
+  }
+}
+
+/* Mobile performance and reduced-motion preference */
+@media (max-width: 520px) {
+  .translator-card {
+    background: rgba(8, 5, 8, 0.89);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

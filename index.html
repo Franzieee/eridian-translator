@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Eridian Translator 🎵🎶</title>
+  <meta
+    name="description"
+    content="A free, fan-made English to Eridian music-note translator."
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="background.js" defer></script>
+</head>
+
+<body>
+  <canvas id="astrophageCanvas" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Eridian Translator home">
+      <span class="brand-icon">🎵🎶</span>
+      <span>Eridian Translator</span>
+    </a>
+
+    <nav class="header-links" aria-label="Main navigation">
+      <a href="#faq">FAQs</a>
+      <a
+        href="https://ko-fi.com/ineffardtark"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Buy me a Ko-fi ☕
+      </a>
+    </nav>
+  </header>
+
+  <main id="home" class="main-content">
+    <section class="translator-card">
+      <p class="eyebrow">A LITTLE MUSIC, A LITTLE MAGIC</p>
+
+      <h1>Speak Eridian.</h1>
+
+      <p class="subtitle">
+        Turn your words into music notes and back again.
+      </p>
+
+      <div class="direction-selector" aria-label="Translation direction">
+        <button
+          class="direction-btn active"
+          type="button"
+          data-direction="english-to-eridian"
+          aria-pressed="true"
+        >
+          English → Eridian
+        </button>
+
+        <button
+          class="direction-btn"
+          type="button"
+          data-direction="eridian-to-english"
+          aria-pressed="false"
+        >
+          Eridian → English
+        </button>
+      </div>
+
+      <label for="inputText" class="field-label">Your text</label>
+
+      <textarea
+        id="inputText"
+        placeholder="Paste or type your text here..."
+        spellcheck="false"
+        rows="6"
+      ></textarea>
+
+      <p id="warningMessage" class="warning" role="status"></p>
+
+      <div class="field-heading">
+        <label for="outputText" class="field-label">
+          Your translation
+        </label>
+
+        <span id="statusMessage" class="status">
+          Your translation will appear here.
+        </span>
+      </div>
+
+      <textarea
+        id="outputText"
+        placeholder="Your translation will appear here..."
+        rows="6"
+        readonly
+        aria-label="Translated text"
+      ></textarea>
+
+      <div class="action-buttons">
+        <button id="clearButton" class="button secondary" type="button">
+          Clear
+        </button>
+
+        <button id="copyButton" class="button primary" type="button">
+          Copy translation
+        </button>
+      </div>
+
+      <p class="disclaimer">
+        Use standard English letters (A–Z and a–z). Spaces, punctuation,
+        numbers, and symbols are preserved. Accented letters such as ø,
+        é, and ñ are not supported. When decoding Eridian, do not insert,
+        remove, or change spaces within the music-note sequences.
+        Each letter requires exactly six consecutive music-note emojis.
+      </p>
+    </section>
+
+    <section id="faq" class="faq-section">
+      <p class="eyebrow">GOOD TO KNOW</p>
+      <h2>Frequently asked questions</h2>
+
+      <details>
+        <summary>What is Eridian translator?</summary>
+        <p>
+          Eridian is a playful fan-made encoding system that uses two
+          music-note emojis to represent binary digits. 🎵 represents 0,
+          and 🎶 represents 1.
+        </p>
+      </details>
+
+      <details>
+        <summary>How does the translator work?</summary>
+        <p>
+          Each English letter is represented by six binary digits.
+          🎵 represents 0, and 🎶 represents 1. The first 26 codes
+          represent uppercase letters A–Z, and the next 26 represent
+          lowercase letters a–z.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do spaces matter when decoding?</summary>
+        <p>
+          Yes! Each letter must have exactly six consecutive music-note
+          emojis. Do not insert, remove, or change spaces within an
+          encoded sequence. Spaces between words and punctuation from
+          the original message are preserved by the translator.
+          If you manually edit the note sequences, decoding may fail.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I use punctuation and special characters?</summary>
+        <p>
+          Spaces, punctuation, numbers, and ordinary symbols are left
+          unchanged. Accented or special letters such as ø, é, and ñ
+          are not supported and should be avoided for reliable results.
+        </p>
+      </details>
+
+      <details>
+        <summary>Will uppercase and lowercase letters be preserved?</summary>
+        <p>
+          Yes! The six-bit format assigns different codes to uppercase
+          and lowercase letters, so a correctly encoded message decodes
+          with its original capitalization intact.
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with 🎵🎶 and a little fandom love.</p>
+    <p>Free, fan-made, and not affiliated with any official franchise.</p>
+  </footer>
+</body>
+</html>
